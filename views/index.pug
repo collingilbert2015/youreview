@@ -1,0 +1,22 @@
+extends base
+
+block vars
+  - var title = 'Home'
+
+block body
+
+  .container.index
+    h1.text-center This is YouReview!
+    br
+    h2.text-center Score and share your movies reviews.
+    .row
+      .col-xs-12.col-md-offset-2.col-md-8
+        .jumbotron.text-justify
+          p.
+
+          if(!user)
+            a(href='/register')
+            button.btn.btn-lg.btn-primary.center-block(type='button') Get Started!
+          if(user)
+            p You are currently logged in as #{user.username} #{user.test}
+            a(href="/logout") Logout
